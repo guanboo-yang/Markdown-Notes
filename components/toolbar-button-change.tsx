@@ -1,31 +1,22 @@
 import { Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import ToolbarButton from "./toolbar-button";
-import { ClassValue } from "clsx";
+import { ToolbarButtonProps } from "@/types";
 
-interface ToolbarButtonChangeProps {
-  onClick: () => void;
-  active: boolean;
+interface ToolbarButtonChangeProps extends ToolbarButtonProps {
   IconActive: React.ElementType;
   IconNotActive: React.ElementType;
-  className?: ClassValue;
-  noRenderActive?: boolean;
+  noRenderActive?: boolean; // if true, the button will not be rendered as active
 }
 
 // switch between on and off
-const ToolbarButtonChange = ({
-  onClick,
-  active,
-  IconActive,
-  IconNotActive,
-  className,
-  noRenderActive,
-}: ToolbarButtonChangeProps) => {
+const ToolbarButtonChange = (props: ToolbarButtonChangeProps) => {
+  const { IconActive, IconNotActive, active, noRenderActive } = props;
   return (
     <ToolbarButton
+      {...props}
+      {...(!noRenderActive && { "aria-active": active })}
       active={!noRenderActive && active}
-      onClick={onClick}
-      className={className}
     >
       <Transition
         as={Fragment}

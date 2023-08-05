@@ -154,17 +154,16 @@ const Editor = ({
           // overviewRulerLanes: 0, // ?
         }}
       />
-      <div className="sticky bottom-0 flex w-full items-center gap-1 p-1.5">
-        <div className="text-xs text-gray-400">
+      <div className="sticky bottom-0 flex w-full items-center gap-1 p-1.5 text-xs text-gray-500">
+        <span>
           Line{" "}
           <code>
             {position.lineNumber}/{position.lineCount}
           </code>
-          {", "}
-          Column <code>{position.column}</code>
-        </div>
-        <div className="flex-1" />
-        <div className="text-xs text-gray-400">Markdown</div>
+          , Column <code>{position.column}</code>
+        </span>
+        <span className="flex-1" />
+        Markdown
       </div>
     </>
   );
