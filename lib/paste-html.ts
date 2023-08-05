@@ -1,5 +1,5 @@
 import type { Editor as EditorType } from "@/types";
-import { turndownService } from "./turn-down";
+// import { turndownService } from "./turn-down";
 
 export const checkHasHtml = async () => {
   const clipboard = await navigator.clipboard.read();
@@ -21,7 +21,8 @@ export const toHtml = async (editor: EditorType | null) => {
     if (item.types.includes("text/html")) {
       const blob = await item.getType("text/html");
       const html = await blob.text();
-      const markdown = turndownService.turndown(html);
+      // const markdown = turndownService.turndown(html);
+      const markdown = html;
       editor.trigger("keyboard", "paste", { text: markdown });
     } else if (item.types.includes("text/plain")) {
       const blob = await item.getType("text/plain");

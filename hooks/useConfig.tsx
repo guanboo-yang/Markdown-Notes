@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createContext,
   ReactNode,
@@ -36,6 +38,10 @@ const ConfigContext = createContext<ConfigContextType>({
 function ConfigProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useDarkMode();
   const [config, setConfig] = useState<Config>(defaultConfig);
+
+  useEffect(() => {
+    console.log("useConfig", config.mode);
+  }, [config.mode]);
 
   useEffect(() => {
     setConfig((prev) => ({ ...prev, darkMode }));

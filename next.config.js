@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  basePath: '/markdown-notes',
+  output: "export",
+  basePath: "/markdown-notes",
+  productionBrowserSourceMaps: true,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

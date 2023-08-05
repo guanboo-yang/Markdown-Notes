@@ -1,7 +1,7 @@
 import { OnMount } from "@monaco-editor/react";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import type { Editor as EditorType } from "@/types";
-import { ToolbarButtonTooltip } from "./toolbar-button";
+import { ToolbarButtonTooltip } from "./toolbar-button-tooltip";
 import ToolbarButtonChange from "./toolbar-button-change";
 import { cn, formatMarkdown } from "@/lib/utils";
 import { BoldIcon, BrushIcon, CodeIcon, CalculatorIcon } from "lucide-react";
@@ -208,7 +208,7 @@ const EditorPane = (
           active={copySuccess}
           onClick={onClickCopy}
         />
-        <ToolbarButtonTooltip tooltip="Page Break" onClick={() => {}}>
+        <ToolbarButtonTooltip tooltip="More" onClick={() => {}}>
           <MoreHorizontalIcon className="h-4.5 w-4.5" />
         </ToolbarButtonTooltip>
         <div className="flex-1" />

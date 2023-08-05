@@ -13,7 +13,6 @@ const useDarkMode = (): [
   const [mediaQueryDarkMode, setMediaQueryDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
-    // if (darkMode !== undefined) return;
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => setMediaQueryDarkMode(mediaQuery.matches);
     handleChange();
@@ -22,7 +21,6 @@ const useDarkMode = (): [
   }, []);
 
   useEffect(() => {
-    console.log("useDarkMode", darkMode, mediaQueryDarkMode);
     document.documentElement.classList.toggle(
       "dark",
       (darkMode ?? mediaQueryDarkMode) === true,
