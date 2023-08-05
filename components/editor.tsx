@@ -29,6 +29,7 @@ const Editor = ({
 
   const onMount: OnMount = async (editor: EditorType, monaco: Monaco) => {
     editorRef.current = editor;
+    editor.focus();
 
     // add markdown extension
     const MonacoMarkdown = await import("monaco-markdown");
