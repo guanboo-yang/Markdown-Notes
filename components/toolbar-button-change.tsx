@@ -11,11 +11,12 @@ interface ToolbarButtonChangeProps extends ToolbarButtonProps {
 
 // switch between on and off
 const ToolbarButtonChange = (props: ToolbarButtonChangeProps) => {
-  const { IconActive, IconNotActive, active, noRenderActive } = props;
+  const { IconActive, IconNotActive, active, noRenderActive, ...restProps } =
+    props;
   return (
     <ToolbarButton
-      {...props}
-      {...(!noRenderActive && { "aria-active": active })}
+      {...restProps}
+      {...(!noRenderActive && { "aria-pressed": active })}
       active={!noRenderActive && active}
     >
       <Transition

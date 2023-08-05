@@ -207,6 +207,7 @@ const EditorPane = (
           IconNotActive={ClipboardIcon}
           active={copySuccess}
           onClick={onClickCopy}
+          aria-label="Copy"
         />
         <ToolbarButtonTooltip tooltip="More" onClick={() => {}}>
           <MoreHorizontalIcon className="h-4.5 w-4.5" />

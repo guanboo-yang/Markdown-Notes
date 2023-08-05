@@ -53,6 +53,7 @@ const CodeHighlight = ({ code, language }: CodeHighlightProps) => {
           IconNotActive={ClipboardIcon}
           active={copySuccess}
           onClick={onClickCopy}
+          aria-label="Copy"
         />
       </div>
     </>

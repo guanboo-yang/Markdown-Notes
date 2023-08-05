@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  ReactNode,
-  useState,
-  useContext,
-  useEffect,
-} from "react";
+import { createContext, ReactNode, useState, useContext } from "react";
+import { useEffect, Dispatch, SetStateAction } from "react";
 import useDarkMode from "./useDarkMode";
-
-type Mode = "editor" | "preview" | "both";
+import { Mode } from "@/types";
 
 type Config = {
   darkMode: boolean | undefined;
@@ -25,8 +19,8 @@ const defaultConfig = {
 
 interface ConfigContextType {
   config: Config;
-  setConfig: React.Dispatch<React.SetStateAction<Config>>;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean | undefined>>;
+  setConfig: Dispatch<SetStateAction<Config>>;
+  setDarkMode: Dispatch<SetStateAction<boolean | undefined>>;
 }
 
 const ConfigContext = createContext<ConfigContextType>({
@@ -38,10 +32,6 @@ const ConfigContext = createContext<ConfigContextType>({
 function ConfigProvider({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useDarkMode();
   const [config, setConfig] = useState<Config>(defaultConfig);
-
-  useEffect(() => {
-    console.log("useConfig", config.mode);
-  }, [config.mode]);
 
   useEffect(() => {
     setConfig((prev) => ({ ...prev, darkMode }));

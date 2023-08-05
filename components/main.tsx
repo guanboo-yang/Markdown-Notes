@@ -24,10 +24,6 @@ export default function Main() {
   const requestRef = useRef<number>(0);
   const { config, setConfig } = useConfig();
 
-  console.log(
-    `Main is ${typeof window === "undefined" ? "server" : "client"} side`,
-  );
-
   useEffect(() => {
     if (window.innerWidth < 768) {
       setConfig((prev) => ({ ...prev, mode: "editor" }));

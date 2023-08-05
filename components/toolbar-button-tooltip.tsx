@@ -82,18 +82,20 @@ interface ToolbarButtonTooltipProps extends ToolbarButtonProps {
 export const ToolbarButtonTooltip = (props: ToolbarButtonTooltipProps) => {
   const { tooltip, keybinding } = props;
   return (
-    <PopoverMenu
-      Icon={<ToolbarButton {...props} aria-label={tooltip} />}
-      content={
-        <span className="flex items-center gap-1">
-          <span>{tooltip}</span>
-          {keybinding && (
-            <kbd className="rounded border border-gray-300 bg-gray-200 px-1 font-[inherit] dark:border-gray-500 dark:bg-gray-600">
-              {keybinding}
-            </kbd>
-          )}
-        </span>
-      }
-    />
+    <ToolbarButton {...props} aria-label={tooltip} />
+    // TODO: Fix Accessibility Issue
+    // <PopoverMenu
+    //   Icon={<ToolbarButton {...props} aria-label={tooltip} />}
+    //   content={
+    //     <span className="flex items-center gap-1">
+    //       <span>{tooltip}</span>
+    //       {keybinding && (
+    //         <kbd className="rounded border border-gray-300 bg-gray-200 px-1 font-[inherit] dark:border-gray-500 dark:bg-gray-600">
+    //           {keybinding}
+    //         </kbd>
+    //       )}
+    //     </span>
+    //   }
+    // />
   );
 };

@@ -154,7 +154,7 @@ const Editor = ({
           // overviewRulerLanes: 0, // ?
         }}
       />
-      <div className="sticky bottom-0 flex w-full items-center gap-1 p-1.5 text-xs text-gray-500">
+      <div className="sticky bottom-0 flex w-full items-center gap-1 p-1.5 text-xs text-gray-500 dark:text-gray-400">
         <span>
           Line{" "}
           <code>
