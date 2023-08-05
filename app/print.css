@@ -1,0 +1,68 @@
+/* Print styles */
+@media print {
+  body {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html {
+    /* perfect match! */
+    font-size: 9pt;
+  }
+}
+
+@media print {
+  #preview,
+  .overflow-hidden {
+    overflow: visible !important;
+  }
+}
+
+@media print {
+  .markdown .youtube > img {
+    display: block !important;
+  }
+}
+
+@page {
+  size: A4 portrait;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+h1 + p,
+h2 + p,
+h3 + p {
+  page-break-before: avoid;
+}
+
+a {
+  page-break-inside: avoid;
+}
+
+img {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+table,
+blockquote {
+  page-break-inside: avoid;
+}
+
+ul,
+ol,
+dl {
+  page-break-before: avoid;
+}
+
+.break-after-page {
+  break-after: page;
+}
