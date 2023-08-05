@@ -1,3 +1,5 @@
+"use client";
+
 import { BookOpenIcon, EyeIcon, LibraryIcon, MonitorIcon } from "lucide-react";
 import { MoonIcon, PencilIcon, SunIcon } from "lucide-react";
 import ToolbarButton from "./toolbar-button";
