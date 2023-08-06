@@ -23,14 +23,14 @@ const Toolbar = () => {
 
   return (
     <>
-      <ToolbarButton
+      {/* <ToolbarButton
         isLink
         href="/"
         active={pathname === "/"}
         aria-label="Home"
       >
         <LibraryIcon className="h-4.5 w-4.5" />
-      </ToolbarButton>
+      </ToolbarButton> */}
       <ToolbarButton
         active={config.mode === "editor"}
         onClick={() => onClickMode("editor")}

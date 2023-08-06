@@ -9,7 +9,7 @@ import { CheckIcon, ClipboardIcon, FilePlusIcon } from "lucide-react";
 import { HeadingIcon, ImageIcon, ItalicIcon, ListIcon } from "lucide-react";
 import { LinkIcon, MoreHorizontalIcon, RedoIcon } from "lucide-react";
 import { StrikethroughIcon, TableIcon, UndoIcon } from "lucide-react";
-import { WrapTextIcon } from "lucide-react";
+import { WrapTextIcon, PlusIcon } from "lucide-react";
 import { useConfig } from "@/hooks/useConfig";
 import Editor from "./editor";
 
@@ -117,35 +117,35 @@ const EditorPane = (
       )}
     >
       <div className="no-scrollbar flex h-[44px] w-full flex-shrink-0 flex-wrap items-center gap-1.5 gap-y-1.5 overflow-x-auto p-1.5 hover:h-fit">
-        <ToolbarButtonTooltip
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("Bold")}
           tooltip="Bold"
           keybinding="⌘B"
         >
           <BoldIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("Italic")}
           tooltip="Italic"
           keybinding="⌘I"
         >
           <ItalicIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("Strikethrough")}
           tooltip="Strikethrough"
           keybinding="⌥S"
         >
           <StrikethroughIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("HeadingUp")}
           tooltip="Heading"
           keybinding="⌃⇧["
         >
           <HeadingIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <Splitter />
+        </ToolbarButtonTooltip> */}
+        {/* <Splitter /> */}
         <ToolbarButtonTooltip onClick={onClickFormat} tooltip="format">
           <BrushIcon className="h-4.5 w-4.5" />
         </ToolbarButtonTooltip>
@@ -162,46 +162,46 @@ const EditorPane = (
         <ToolbarButtonTooltip onClick={onClickRedo} tooltip="Redo">
           <RedoIcon className="h-4.5 w-4.5" />
         </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        {/* <ToolbarButtonTooltip
           onClick={() => navigator.clipboard.writeText(JSON.stringify(text))}
           tooltip="String"
         >
           T
-        </ToolbarButtonTooltip>
+        </ToolbarButtonTooltip> */}
         <Splitter />
-        <ToolbarButtonTooltip
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("CodeSpan")}
           tooltip="Code"
         >
           <CodeIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("List")}
           tooltip="Unordered List"
           keybinding="⌘L"
         >
           <ListIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip onClick={() => {}} tooltip="Link" disabled>
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip onClick={() => {}} tooltip="Link" disabled>
           <LinkIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip onClick={() => {}} tooltip="Image" disabled>
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip onClick={() => {}} tooltip="Image" disabled>
           <ImageIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip onClick={() => {}} tooltip="Table" disabled>
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip onClick={() => {}} tooltip="Table" disabled>
           <TableIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <ToolbarButtonTooltip
+        </ToolbarButtonTooltip> */}
+        {/* <ToolbarButtonTooltip
           onClick={() => onClick("Math")}
           tooltip="Math"
           keybinding="⌘M"
         >
           <CalculatorIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
-        <Splitter />
-        <ToolbarButtonTooltip tooltip="Page Break" onClick={onClickPageBreak}>
+        </ToolbarButtonTooltip> */}
+        {/* <Splitter /> */}
+        {/* <ToolbarButtonTooltip tooltip="Page Break" onClick={onClickPageBreak}>
           <FilePlusIcon className="h-4.5 w-4.5" />
-        </ToolbarButtonTooltip>
+        </ToolbarButtonTooltip> */}
         <ToolbarButtonChange
           IconActive={CheckIcon}
           IconNotActive={ClipboardIcon}
@@ -210,7 +210,7 @@ const EditorPane = (
           aria-label="Copy"
         />
         <ToolbarButtonTooltip tooltip="More" onClick={() => {}}>
-          <MoreHorizontalIcon className="h-4.5 w-4.5" />
+          <PlusIcon className="h-4.5 w-4.5" />
         </ToolbarButtonTooltip>
         <div className="flex-1" />
       </div>
